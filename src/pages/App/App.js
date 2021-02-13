@@ -4,6 +4,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
+import IndexPage from '../IndexPage/IndexPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 
@@ -44,6 +45,11 @@ render() {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
+                <Switch>
+                <Route exact path='/' render={() =>
+                <IndexPage />
+                 }/>
+                
                 <Route exact path='/signup' render={({ history }) => 
                 <SignupPage
                     history={history}
@@ -59,6 +65,7 @@ render() {
                 <Route exact path='/signout' render={() =>
                 <SignoutPage/>
                 } />
+                </Switch>
             </header>
         </div>
         );
