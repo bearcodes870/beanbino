@@ -4,28 +4,48 @@ import { Route, Link, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
+import NavBar from '../../components/NavBar/NavBar';
+import userService from '../../utils/userService';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <Link className='btn btn-default' to='/signup'>Signup</Link>
-          <Route exact path='/signup' render={({ history }) => 
-            <SignupPage
-              history={history} 
-            />
-          }/>
-          <Link className='btn btn-default' to='/login'>Login</Link>
-          <Route exact path='/login' render={() =>
-            <LoginPage/>
-        } />
-          <Link className='btn btn-default' to='/signout'>Signout</Link>
-          <Route exact path='/signout' render={() =>
-            <SignoutPage/>
-        } />
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor() {
+      super();
+      this.state = {
+        ...this.getInitialState(),
+        // Initialize user if there's a token, otherwise null
+        user: userService.getUser()
+      };
+    }
+  
+    getInitialState() {
+      return {
+      };
+    }
+  
+  
+    /*--- Lifecycle Methods ---*/
+  
+  
+render() {
+    return (
+        <div className="App">
+            <header className="App-header">
+                <NavBar />
+                <Route exact path='/signup' render={({ history }) => 
+                <SignupPage
+                    history={history} 
+                />
+                }/>
+                <Route exact path='/login' render={() =>
+                <LoginPage/>
+                } />
+                <Route exact path='/signout' render={() =>
+                <SignoutPage/>
+                } />
+            </header>
+        </div>
+        );
+    }
 }
-
+  
 export default App;
