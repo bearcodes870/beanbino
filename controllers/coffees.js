@@ -2,27 +2,23 @@ var Coffee = require('../models/coffee');
 
 module.exports = {
   create,
-  coffees
+  index
 };
 
 async function create(req, res) {
   console.log('user: ', req.user)
   try {
-    await Coffee.create(req.body);
-    coffees(req, res);
+    const coffee = await Coffee.create(req.body);
+    res.json({coffee})
   } catch (err) {
     res.json({err});
   }
 }
 
-async function coffees(req, res) {
-    console.log(req.user)
-  const coffees = await Coffee.find({})
-    .limit(req.query.limit || 20);
-  res.json(coffees);
+async function index(req, res) {
+    // todo: use function to look up all coffees in database
+    // respond with json
 }
 
-
-
-
-
+// coffee.find all
+// when added, add to the list

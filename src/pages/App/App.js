@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
 import IndexPage from '../IndexPage/IndexPage';
+import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 
@@ -13,7 +14,7 @@ class App extends Component {
       super();
       this.state = {
         ...this.getInitialState(),
-        // Initialize user if there's a token, otherwise null
+        coffees: [],
         user: userService.getUser()
       };
     }
@@ -45,8 +46,11 @@ render() {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
+                <Route exact path='/new-coffee' render={({}) =>
+                <NewCoffeePage />
+                 }/>
                 <Switch>
-                <Route exact path='/' render={() =>
+                <Route exact path='/' render={({}) =>
                 <IndexPage />
                  }/>
                 

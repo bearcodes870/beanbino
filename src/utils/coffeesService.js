@@ -27,6 +27,6 @@ function create(coffee) {
     },
     body: JSON.stringify(coffee)
   };
-  return fetch(BASE_URL, options).then(res => res.json());
+  return fetch(BASE_URL + 'create', options).then(res => res.json());
 }
 
