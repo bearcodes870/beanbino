@@ -17,7 +17,9 @@ async function create(req, res) {
 
 async function index(req, res) {
     // todo: use function to look up all coffees in database
+    const coffees = await Coffee.find({});
     // respond with json
+    res.json(coffees);
 }
 
 // coffee.find all

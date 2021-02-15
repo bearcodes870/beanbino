@@ -8,6 +8,7 @@ import IndexPage from '../IndexPage/IndexPage';
 import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
+import coffeesService from '../../utils/coffeesService';
 
 class App extends Component {
     constructor() {
@@ -24,6 +25,10 @@ class App extends Component {
       };
     }
 
+    handleUpdateCoffees = (coffees) => {
+        this.setState({ coffees });
+      }
+
     handleSignupOrLogin = () => {
         this.setState({user: userService.getUser()});
         console.log(this.state.user);
@@ -36,6 +41,11 @@ class App extends Component {
   
   
     /*--- Lifecycle Methods ---*/
+
+    async componentDidMount() {
+        const coffees = await coffeesService.index();
+        this.setState({ coffees });
+      }
   
   
 render() {
@@ -51,7 +61,10 @@ render() {
                  }/>
                 <Switch>
                 <Route exact path='/' render={({}) =>
-                <IndexPage />
+                <IndexPage 
+                    coffees={this.state.coffees}
+                    handleUpdateCoffees={this.handleUpdateCoffees}
+                    />
                  }/>
                 
                 <Route exact path='/signup' render={({ history }) => 
