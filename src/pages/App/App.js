@@ -68,7 +68,7 @@ render() {
                 <Route exact path='/new-coffee' render={({}) =>
                 <NewCoffeePage />
                  }/>
-                 <Route exact path='/update-coffee' render={({}) =>
+                 <Route exact path='/coffee-details' render={({}) =>
                 <UpdateCoffeePage 
                     coffees={this.state.coffees}
                 />

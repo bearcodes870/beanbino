@@ -3,6 +3,7 @@ var Coffee = require('../models/coffee');
 module.exports = {
   create,
   index,
+  show,
   update
 };
 
@@ -22,6 +23,13 @@ async function index(req, res) {
     // respond with json
     res.json(coffees);
 }
+
+function show(req, res) {
+    const coffee = Coffee.findById(req.params.id)
+    .then(coffee => {console.log(coffee)})
+    res.json(coffee);
+  }
+
 
 function update(req, res) {
     const coffee = Coffee.findById(req.params.id)

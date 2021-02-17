@@ -34,7 +34,7 @@ function create(coffee) {
 
 function show(coffee) {
     const options = {
-      method: 'PUT',
+      method: 'GET',
       headers: {
         'Content-type': 'application/json',
         // Add this header - don't forget the space after Bearer

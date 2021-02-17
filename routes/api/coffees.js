@@ -15,6 +15,7 @@ router.post('/create', coffeesCtrl.create);
 * res.json the coffee that is found
 * add a util for react to reach this endpoint
 **/
+router.get('/:id', coffeesCtrl.show);
 router.put('/:id/update', coffeesCtrl.update);
 
 /*----- Helper Functions -----*/
