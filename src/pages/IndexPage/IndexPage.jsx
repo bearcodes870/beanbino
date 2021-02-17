@@ -15,6 +15,7 @@ class IndexPage extends Component {
           <td><span className="badge">{idx + 1}</span></td>
           <td>{coffee.name}</td>
           <td>{coffee.region}</td>
+          <Link></Link>
         </tr>
       ));
     
