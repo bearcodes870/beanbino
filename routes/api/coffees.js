@@ -8,6 +8,14 @@ router.get('/', coffeesCtrl.index);
 // Process the token for only the routes below
 router.use(require('../../config/auth'));
 router.post('/create', coffeesCtrl.create);
+// show page /:id
+/* 
+* implement show ctrl action
+* will find a coffee based on id
+* res.json the coffee that is found
+* add a util for react to reach this endpoint
+**/
+router.put('/:id/update', coffeesCtrl.update);
 
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {
@@ -16,3 +24,4 @@ function checkAuth(req, res, next) {
 }
 
 module.exports = router;
+

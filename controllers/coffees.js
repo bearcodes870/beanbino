@@ -2,7 +2,8 @@ var Coffee = require('../models/coffee');
 
 module.exports = {
   create,
-  index
+  index,
+  update
 };
 
 async function create(req, res) {
@@ -22,5 +23,11 @@ async function index(req, res) {
     res.json(coffees);
 }
 
-// coffee.find all
-// when added, add to the list
+function update(req, res) {
+    const coffee = Coffee.findById(req.params.id)
+    .then(coffee => {console.log(coffee)})
+    res.json(coffee)
+  }
+
+// coffee._ = name
+// req.body 

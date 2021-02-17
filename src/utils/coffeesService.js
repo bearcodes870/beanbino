@@ -4,7 +4,8 @@ const BASE_URL = '/api/coffees/';
 
 export default {
   index,
-  create
+  create,
+  updateCoffee
 };
 
 function index() {
@@ -29,4 +30,18 @@ function create(coffee) {
   };
   return fetch(BASE_URL + 'create', options).then(res => res.json());
 }
+
+function updateCoffee(coffee) {
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+        // Add this header - don't forget the space after Bearer
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(coffee)
+    };
+    // api/coffees/:id/update
+    return fetch(`${BASE_URL}${coffee.id}/update`, options).then(res => res.json());
+  }
 

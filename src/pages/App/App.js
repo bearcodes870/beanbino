@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
 import IndexPage from '../IndexPage/IndexPage';
 import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
+import UpdateCoffeePage from '../UpdateCoffeePage/UpdateCoffeePage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import coffeesService from '../../utils/coffeesService';
@@ -46,18 +48,30 @@ class App extends Component {
         const coffees = await coffeesService.index();
         this.setState({ coffees });
       }
+
   
   
 render() {
     return (
         <div className="App">
             <header className="App-header">
+            <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+                integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+                crossorigin="anonymous"
+            />
                 <NavBar 
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
                 <Route exact path='/new-coffee' render={({}) =>
                 <NewCoffeePage />
+                 }/>
+                 <Route exact path='/update-coffee' render={({}) =>
+                <UpdateCoffeePage 
+                    coffee={this.state.coffee}
+                />
                  }/>
                 <Switch>
                 <Route exact path='/' render={({}) =>

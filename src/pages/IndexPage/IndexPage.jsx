@@ -15,7 +15,7 @@ class IndexPage extends Component {
           <td><span className="badge">{idx + 1}</span></td>
           <td>{coffee.name}</td>
           <td>{coffee.region}</td>
-          <Link></Link>
+          <td><Link to='/update-coffee'>Details</Link></td>
         </tr>
       ));
     
@@ -32,7 +32,7 @@ class IndexPage extends Component {
               </tbody>
             </table>
             :
-            <h4 className='text-info'>No High Scores Yet</h4>
+            <h4 className='text-info'>No Coffee Yet ... </h4>
           }
         </div>
       );
