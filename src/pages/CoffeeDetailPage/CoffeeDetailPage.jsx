@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+import coffeesService from '../../utils/coffeesService';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
 
 class UpdateCoffeePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+        coffees: [],
         name: '',
         region: ''
     }
   }
 
+  async componentDidMount() {
+    const coffee = await coffeesService.show();
+    console.log(coffee);
+  }
   render() {
     return (
       <div className='UpdateCoffeePage'>

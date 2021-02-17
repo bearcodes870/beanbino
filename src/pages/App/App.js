@@ -7,7 +7,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
 import IndexPage from '../IndexPage/IndexPage';
 import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
-import UpdateCoffeePage from '../UpdateCoffeePage/UpdateCoffeePage';
+import UpdateCoffeePage from '../CoffeeDetailPage/CoffeeDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import coffeesService from '../../utils/coffeesService';
@@ -70,7 +70,7 @@ render() {
                  }/>
                  <Route exact path='/update-coffee' render={({}) =>
                 <UpdateCoffeePage 
-                    coffee={this.state.coffee}
+                    coffees={this.state.coffees}
                 />
                  }/>
                 <Switch>
