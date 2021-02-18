@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import coffeesService from '../../utils/coffeesService';
+import React, { Component, Button } from 'react';
 import CoffeeDetailCard from '../../components/CoffeeDetailCard/CoffeeDetailCard';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
+import CoffeeDeleteForm from '../../components/CoffeeDeleteForm/CoffeeDeleteForm';
 
 class CoffeeDetailPage extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class CoffeeDetailPage extends Component {
       <div className='UpdateCoffeePage'>
         <CoffeeDetailCard coffee={this.state.coffee} />
         <UpdateCoffeeForm coffee={this.state.coffee} />
+        <CoffeeDeleteForm coffee={this.state.coffee} />
       </div>
     );
   }
