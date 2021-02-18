@@ -2,30 +2,24 @@ import React, { Component } from 'react';
 import coffeesService from '../../utils/coffeesService';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
 
-class UpdateCoffeePage extends Component {
+class CoffeeDetailPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        coffees: [],
-        name: '',
-        region: ''
+        coffee: props.location.state.coffee || {}
     }
   }
 
-  async componentDidMount() {
-    const coffee = await coffeesService.show();
-    console.log(coffee);
-  }
   render() {
     return (
       <div className='UpdateCoffeePage'>
-        <UpdateCoffeeForm {...this.props} />
+        <UpdateCoffeeForm coffee={this.state.coffee} />
       </div>
     );
   }
 }
 
-export default UpdateCoffeePage;
+export default CoffeeDetailPage;
 
 // init coffee as empty obj
 // this.state

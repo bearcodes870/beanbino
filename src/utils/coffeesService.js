@@ -43,7 +43,7 @@ function show(coffee) {
       body: JSON.stringify(coffee)
     };
     // api/coffees/:id/update
-    return fetch(`${BASE_URL}/update`, options).then(res => res.json());
+    return fetch(`${BASE_URL}${coffee.id}`, options).then(res => res.json());
   }
 
 function updateCoffee(coffee) {

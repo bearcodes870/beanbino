@@ -15,7 +15,7 @@ class IndexPage extends Component {
           <td><span className="badge">{idx + 1}</span></td>
           <td>{coffee.name}</td>
           <td>{coffee.region}</td>
-          <td><Link to='/coffee-details' key={idx}>Details</Link></td>
+          <td><Link to={{ pathname:'/details', state: { coffee }}}>Details</Link></td>
         </tr>
       ));
     

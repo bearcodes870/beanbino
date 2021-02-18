@@ -6,8 +6,8 @@ class UpdateCoffeeForm extends Component {
     // move state into constructor
     // initial state ex. name: props.coffee.name || ''
   state = {
-    name: '',
-    region: ''
+    name: this.props.coffee.name || '',
+    region: this.props.coffee.region || '',
   };
 
   handleChange = (e) => {

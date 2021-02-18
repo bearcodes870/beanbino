@@ -7,7 +7,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignoutPage from '../SignoutPage/SignoutPage';
 import IndexPage from '../IndexPage/IndexPage';
 import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
-import UpdateCoffeePage from '../CoffeeDetailPage/CoffeeDetailPage';
+import CoffeeDetailPage from '../CoffeeDetailPage/CoffeeDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import coffeesService from '../../utils/coffeesService';
@@ -65,16 +65,16 @@ render() {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
-                <Route exact path='/new-coffee' render={({}) =>
+                <Route exact path='/new-coffee' render={() =>
                 <NewCoffeePage />
                  }/>
-                 <Route exact path='/coffee-details' render={({}) =>
-                <UpdateCoffeePage 
-                    coffees={this.state.coffees}
+                 <Route exact path='/details' render={(props) =>
+                <CoffeeDetailPage 
+                    {...props}
                 />
                  }/>
                 <Switch>
-                <Route exact path='/' render={({}) =>
+                <Route exact path='/' render={() =>
                 <IndexPage 
                     coffees={this.state.coffees}
                     handleUpdateCoffees={this.handleUpdateCoffees}
