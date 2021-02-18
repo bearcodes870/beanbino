@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import coffeesService from '../../utils/coffeesService';
+import CoffeeDetailCard from '../../components/CoffeeDetailCard/CoffeeDetailCard';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
 
 class CoffeeDetailPage extends Component {
@@ -13,6 +14,7 @@ class CoffeeDetailPage extends Component {
   render() {
     return (
       <div className='UpdateCoffeePage'>
+        <CoffeeDetailCard coffee={this.state.coffee} />
         <UpdateCoffeeForm coffee={this.state.coffee} />
       </div>
     );
