@@ -63,7 +63,7 @@ function updateCoffee(coffee) {
 
 function deleteCoffee(id) {
     const options = {
-        method: 'PUT',
+        method: 'DELETE',
         headers: {
           'Content-type': 'application/json',
           // Add this header - don't forget the space after Bearer

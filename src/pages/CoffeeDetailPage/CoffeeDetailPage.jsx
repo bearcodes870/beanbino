@@ -2,6 +2,11 @@ import React, { Component, Button } from 'react';
 import CoffeeDetailCard from '../../components/CoffeeDetailCard/CoffeeDetailCard';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
 import CoffeeDeleteForm from '../../components/CoffeeDeleteForm/CoffeeDeleteForm';
+import coffeesService from '../../utils/coffeesService';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 class CoffeeDetailPage extends Component {
   constructor(props) {
@@ -15,24 +20,31 @@ class CoffeeDetailPage extends Component {
       this.setState({coffee});
   }
 
-  handleDeleteCoffee = (coffee) => {
-      this.setState({coffee});
+  handleDeleteCoffee = async id => {
+      await coffeesService.deleteCoffee(id);
+      window.location = ('/')
   }
 
   render() {
     return (
       <div className='UpdateCoffeePage'>
-        <CoffeeDetailCard coffee={this.state.coffee} />
+        <Container>
+        <Row>
+        <Col><CoffeeDetailCard coffee={this.state.coffee} /></Col>
+        <Col>
         <UpdateCoffeeForm 
           coffee={this.state.coffee} 
           handleNewCoffee={this.handleNewCoffee} 
           history={this.props.history}
           />
+        </Col>
+        </Row>
         <CoffeeDeleteForm 
           coffee={this.state.coffee}
           handleDeleteCoffee={this.handleDeleteCoffee} 
           history={this.props.history}
           />
+        </Container>
       </div>
     );
   }
