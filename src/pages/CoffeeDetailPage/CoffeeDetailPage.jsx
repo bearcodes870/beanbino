@@ -2,7 +2,10 @@ import React, { Component, Button } from 'react';
 import CoffeeDetailCard from '../../components/CoffeeDetailCard/CoffeeDetailCard';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
 import CoffeeDeleteForm from '../../components/CoffeeDeleteForm/CoffeeDeleteForm';
+<<<<<<< HEAD
 import coffeesService from '../../utils/coffeesService';
+=======
+>>>>>>> adc8e784cddae87c5b7a15c84379e500fd7a7840
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
