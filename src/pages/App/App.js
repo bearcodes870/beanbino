@@ -64,14 +64,18 @@ render() {
                    {...props} 
                    />
                  }/>
-                 <Route exact path='/details' render={(props) =>
-                <CoffeeDetailPage 
-                    {...props}
-                />
+                 <Route exact path='/details' render={(props) => (
+                     userService.getUser() ?
+                     <CoffeeDetailPage 
+                    {...props}/>
+                    :
+                    <Redirect to='/login' />
+                 )
                  }/>
                 <Switch>
                 <Route exact path='/' render={() =>
-                <IndexPage 
+                <IndexPage
+                    user={this.state.user}
                     coffees={this.state.coffees}
                     handleUpdateCoffees={this.handleUpdateCoffees}
                     />

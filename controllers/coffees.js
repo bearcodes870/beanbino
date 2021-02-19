@@ -4,7 +4,8 @@ module.exports = {
   create,
   index,
   show,
-  update
+  update,
+  deleteCoffee
 };
 
 async function create(req, res) {
@@ -37,5 +38,8 @@ async function update(req, res) {
     res.json(coffee);
   }
 
-// coffee._ = name
-// req.body 
+async function deleteCoffee(req, res) {
+    const coffee = await Coffee.findByIdAndDelete(req.params.id)
+    console.log(coffee);
+    res.json(coffee);
+  }

@@ -25,7 +25,7 @@ class IndexPage extends Component {
           {this.props.coffees.length ? 
             <table className={`table text-info`}>
               <thead>
-                <tr><th width={80}>#</th><th width={100}>Coffees</th><th width={100}>Region</th><th>Seconds</th></tr>
+                <tr><th width={80}>#</th><th width={100}>Coffees</th><th width={100}>Region</th><th>Details Page</th></tr>
               </thead>
               <tbody>
                 {coffeeRows}
