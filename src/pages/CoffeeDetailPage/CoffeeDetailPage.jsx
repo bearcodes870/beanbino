@@ -15,6 +15,10 @@ class CoffeeDetailPage extends Component {
       this.setState({coffee});
   }
 
+  handleDeleteCoffee = (coffee) => {
+      this.setState({coffee});
+  }
+
   render() {
     return (
       <div className='UpdateCoffeePage'>
@@ -25,7 +29,8 @@ class CoffeeDetailPage extends Component {
           history={this.props.history}
           />
         <CoffeeDeleteForm 
-          coffee={this.state.coffee} 
+          coffee={this.state.coffee}
+          handleDeleteCoffee={this.handleDeleteCoffee} 
           history={this.props.history}
           />
       </div>
