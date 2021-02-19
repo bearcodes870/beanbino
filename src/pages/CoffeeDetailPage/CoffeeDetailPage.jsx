@@ -19,8 +19,15 @@ class CoffeeDetailPage extends Component {
     return (
       <div className='UpdateCoffeePage'>
         <CoffeeDetailCard coffee={this.state.coffee} />
-        <UpdateCoffeeForm coffee={this.state.coffee} handleNewCoffee={this.handleNewCoffee} history={this.props.history}/>
-        <CoffeeDeleteForm coffee={this.state.coffee} />
+        <UpdateCoffeeForm 
+          coffee={this.state.coffee} 
+          handleNewCoffee={this.handleNewCoffee} 
+          history={this.props.history}
+          />
+        <CoffeeDeleteForm 
+          coffee={this.state.coffee} 
+          history={this.props.history}
+          />
       </div>
     );
   }

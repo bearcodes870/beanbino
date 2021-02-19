@@ -23,6 +23,7 @@ class NewCoffeeForm extends Component {
       // Invalid user data (probably duplicate email)
       console.log(err.message);
     }
+    this.props.history.push("/");
   }
 
   isFormInvalid() {
