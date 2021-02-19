@@ -24,17 +24,17 @@ async function index(req, res) {
     res.json(coffees);
 }
 
-function show(req, res) {
-    const coffee = Coffee.findById(req.params.id)
-    .then(coffee => {console.log(coffee)})
+async function show(req, res) {
+    const coffee = await Coffee.findById(req.params.id);
+    console.log(coffee);
     res.json(coffee);
   }
 
 
-function update(req, res) {
-    const coffee = Coffee.findById(req.params.id)
-    .then(coffee => {console.log(coffee)})
-    res.json(coffee)
+async function update(req, res) {
+    const coffee = await Coffee.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    console.log(coffee);
+    res.json(coffee);
   }
 
 // coffee._ = name

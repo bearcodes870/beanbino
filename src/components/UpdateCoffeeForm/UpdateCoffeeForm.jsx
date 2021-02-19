@@ -6,6 +6,7 @@ class UpdateCoffeeForm extends Component {
     // move state into constructor
     // initial state ex. name: props.coffee.name || ''
   state = {
+    id: this.props.coffee._id || '',
     name: this.props.coffee.name || '',
     region: this.props.coffee.region || '',
   };
@@ -21,11 +22,13 @@ class UpdateCoffeeForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await coffeesService.updateCoffee(this.state);
+      const newCoffee = await coffeesService.updateCoffee(this.state);
+      this.props.handleNewCoffee(newCoffee);
     } catch (err) {
       // Invalid user data (probably duplicate email)
       console.log(err.message);
     }
+    this.props.history.push("/");
   }
 
   isFormInvalid() {
@@ -35,7 +38,7 @@ class UpdateCoffeeForm extends Component {
   render() {
     return (
       <div>
-        <header className="header-footer">You're Updating This Coffee ... </header>
+        <header className="header-footer">You're Updating This Coffee {this.state.id} </header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">

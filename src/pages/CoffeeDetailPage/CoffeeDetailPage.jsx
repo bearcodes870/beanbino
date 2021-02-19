@@ -11,11 +11,15 @@ class CoffeeDetailPage extends Component {
     }
   }
 
+  handleNewCoffee = (coffee) => {
+      this.setState({coffee});
+  }
+
   render() {
     return (
       <div className='UpdateCoffeePage'>
         <CoffeeDetailCard coffee={this.state.coffee} />
-        <UpdateCoffeeForm coffee={this.state.coffee} />
+        <UpdateCoffeeForm coffee={this.state.coffee} handleNewCoffee={this.handleNewCoffee} history={this.props.history}/>
         <CoffeeDeleteForm coffee={this.state.coffee} />
       </div>
     );
