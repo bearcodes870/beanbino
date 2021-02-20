@@ -1,7 +1,6 @@
 import React, { Component, Button } from 'react';
 import CoffeeDetailCard from '../../components/CoffeeDetailCard/CoffeeDetailCard';
 import UpdateCoffeeForm from '../../components/UpdateCoffeeForm/UpdateCoffeeForm';
-import CoffeeDeleteForm from '../../components/CoffeeDeleteForm/CoffeeDeleteForm';
 import coffeesService from '../../utils/coffeesService';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -39,11 +38,11 @@ class CoffeeDetailPage extends Component {
           />
         </Col>
         </Row>
-        <CoffeeDeleteForm 
-          coffee={this.state.coffee}
-          handleDeleteCoffee={this.handleDeleteCoffee} 
-          history={this.props.history}
-          />
+        <button
+          className='btn btn-xs btn-danger margin-left-10 delete-coffee'
+          onClick={() => handleDeleteCoffee(this.state.coffee._id)}>
+          DELETE
+        </button>
         </Container>
       </div>
     );

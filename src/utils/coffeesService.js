@@ -71,6 +71,6 @@ function deleteCoffee(id) {
         },
         body: JSON.stringify(id)
       };
-      // api/coffees/:id/update
+      // api/coffees/:id
       return fetch(`${BASE_URL}${id}`, options).then(res => res.json());
 }
