@@ -1,21 +1,25 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 
 function CoffeeDetailCard({coffee}) { 
   return (
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk of
-        the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
+    <div className='panel panel-default'>
+      <div className="panel-heading">
+        <h3 className='panel-title'>{coffee.name}</h3>
+      </div>
+      <div className='panel-body'>
+        <dl>
+          <dt>Name</dt>
+          <dd>{coffee.name}</dd>
+          <dt>Region</dt>
+          <dd>{coffee.region}</dd>
+        </dl>
+      </div>
+      <div className='panel-footer'>
+        <Link to='/'>RETURN TO LIST</Link>
+      </div>
+    </div>
   );
 }
 
-export default CoffeeDetailCard;
+export default CoffeeDetailCard; 

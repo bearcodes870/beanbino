@@ -10,7 +10,7 @@ router.use(require('../../config/auth'));
 router.post('/create', checkAuth, coffeesCtrl.create);
 router.get('/:id', checkAuth, coffeesCtrl.show);
 router.put('/:id/update', checkAuth, coffeesCtrl.update);
-router.delete('/:id', coffeesCtrl.deleteCoffee);
+router.delete('/:id', checkAuth, coffeesCtrl.deleteCoffee);
 
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {
