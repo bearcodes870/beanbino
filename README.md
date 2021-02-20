@@ -53,3 +53,4 @@ Start Here: [Heroku](https://beanbino.herokuapp.com/)
 - Improve styling
 - Add additional details for each coffee entry
 - Google Maps API Implementation
+- Search functionality
