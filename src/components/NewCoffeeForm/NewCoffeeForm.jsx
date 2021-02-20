@@ -54,7 +54,9 @@ class NewCoffeeForm extends Component {
             </div>
           </div>
         </form>
+        
       </div>
+      
     );
   }
 }

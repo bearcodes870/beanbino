@@ -9,7 +9,7 @@ class UpdateCoffeeForm extends Component {
   state = {
     id: this.props.coffee._id || '',
     name: this.props.coffee.name || '',
-    region: this.props.coffee.region || '',
+    region: this.props.coffee.region || ''
   };
 
   handleChange = (e) => {

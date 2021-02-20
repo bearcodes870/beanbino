@@ -25,7 +25,6 @@ function create(coffee) {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
-      // Add this header - don't forget the space after Bearer
       'Authorization': 'Bearer ' + tokenService.getToken()
     },
     body: JSON.stringify(coffee)
@@ -38,12 +37,10 @@ function show(coffee) {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        // Add this header - don't forget the space after Bearer
         'Authorization': 'Bearer ' + tokenService.getToken()
       },
       body: JSON.stringify(coffee)
     };
-    // api/coffees/:id/update
     return fetch(`${BASE_URL}${coffee.id}`, options).then(res => res.json());
   }
 
@@ -52,12 +49,10 @@ function updateCoffee(coffee) {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
-        // Add this header - don't forget the space after Bearer
         'Authorization': 'Bearer ' + tokenService.getToken()
       },
       body: JSON.stringify(coffee)
     };
-    // api/coffees/:id/update
     return fetch(`${BASE_URL}${coffee.id}/update`, options).then(res => res.json());
   }
 
@@ -66,11 +61,9 @@ function deleteCoffee(id) {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',
-          // Add this header - don't forget the space after Bearer
           'Authorization': 'Bearer ' + tokenService.getToken()
         },
         body: JSON.stringify({id})
       };
-      // api/coffees/:id
       return fetch(`${BASE_URL}${id}`, options).then(res => res.json());
 }

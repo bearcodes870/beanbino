@@ -3,7 +3,6 @@ import './App.css';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import SignoutPage from '../SignoutPage/SignoutPage';
 import IndexPage from '../IndexPage/IndexPage';
 import NewCoffeePage from '../NewCoffeePage/NewCoffeePage';
 import CoffeeDetailPage from '../CoffeeDetailPage/CoffeeDetailPage';
@@ -93,7 +92,7 @@ render() {
                 />
                 }/>
                 <Route exact path='/signout' render={() =>
-                <SignoutPage/>
+                <IndexPage />
                 } />
                 </Switch>
             </header>

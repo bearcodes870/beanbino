@@ -11,22 +11,24 @@ class IndexPage extends Component {
   
     render() {
       const coffeeRows = this.props.coffees.map((coffee, idx) => (
-        <tr key={idx}>
-          <td><span className="badge">{idx + 1}</span></td>
-          <td>{coffee.name}</td>
-          <td>{coffee.region}</td>
-          <td><Link to={{ pathname:'/details', state: { coffee }}}>Details</Link></td>
-        </tr>
+
+          <div class="list-group" key={idx}>
+            <div class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                <h2 class="mb-1">{coffee.name}</h2>
+                <small>3 days ago</small>
+                </div>
+                <p class="mb-1">From {coffee.region}</p>
+                <Link to={{ pathname:'/details', state: { coffee }}}>Details</Link>
+            </div>
+          </div>
       ));
     
       return (
         <div>
-          <header className='header-footer'>Rated Coffees</header>
+        &nbsp;&nbsp;&nbsp;
           {this.props.coffees.length ? 
             <table className={`table text-info`}>
-              <thead>
-                <tr><th width={80}>#</th><th width={100}>Coffees</th><th width={100}>Region</th><th>Details Page</th></tr>
-              </thead>
               <tbody>
                 {coffeeRows}
               </tbody>
