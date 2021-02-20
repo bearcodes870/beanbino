@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import coffeesService from '../../utils/coffeesService';
+import './UpdateCoffeeForm.css';
 
 class UpdateCoffeeForm extends Component {
     // move state into constructor
@@ -37,8 +38,8 @@ class UpdateCoffeeForm extends Component {
 
   render() {
     return (
-      <div>
-        <header className="header-footer">You're Updating This Coffee {this.state.id} </header>
+      <div class="update-form">
+        <header className="header-footer">Edit {this.state.name}'s Details </header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div class="mb-3" className="form-group">
             <div className="col-sm-12">

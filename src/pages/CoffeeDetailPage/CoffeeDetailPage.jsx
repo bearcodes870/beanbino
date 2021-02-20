@@ -27,23 +27,18 @@ class CoffeeDetailPage extends Component {
   render() {
     return (
       <div className='UpdateCoffeePage'>
-        <Container>
-        <Row>
-        <Col><CoffeeDetailCard coffee={this.state.coffee} /></Col>
-        <Col>
+        <CoffeeDetailCard coffee={this.state.coffee} />
         <UpdateCoffeeForm 
           coffee={this.state.coffee} 
           handleNewCoffee={this.handleNewCoffee} 
           history={this.props.history}
           />
-        </Col>
-        </Row>
+
         <button
           className='btn btn-xs btn-danger margin-left-10 delete-coffee'
           onClick={() => this.handleDeleteCoffee(this.state.coffee._id)}>
           DELETE
         </button>
-        </Container>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import coffeesService from '../../utils/coffeesService';
+import './NewCoffeeForm.css';
 
 class NewCoffeeForm extends Component {
 
@@ -32,13 +33,10 @@ class NewCoffeeForm extends Component {
 
   render() {
     return (
-      <div>
-        <header className="header-footer">Submit A Coffee</header>
+      <div className="new-coffee-form">
+        &nbsp;&nbsp;&nbsp;
+        <header className="header-footer">Add A New Coffee To Your Collection</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Example label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder"/>
-          </div>
           <div className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Coffee" value={this.state.name} name="name" onChange={this.handleChange} />

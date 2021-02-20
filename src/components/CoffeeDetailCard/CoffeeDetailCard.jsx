@@ -8,7 +8,9 @@ function CoffeeDetailCard({coffee}) {
          <div class="card-body">
             <h3 class="card-title">This coffee is from: {coffee.region}</h3>
         </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
+    
   );
 }
 
