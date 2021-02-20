@@ -35,6 +35,10 @@ class NewCoffeeForm extends Component {
       <div>
         <header className="header-footer">Submit A Coffee</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Example label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder"/>
+          </div>
           <div className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Coffee" value={this.state.name} name="name" onChange={this.handleChange} />

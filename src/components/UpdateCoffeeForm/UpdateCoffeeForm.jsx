@@ -40,7 +40,7 @@ class UpdateCoffeeForm extends Component {
       <div>
         <header className="header-footer">You're Updating This Coffee {this.state.id} </header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
+          <div class="mb-3" className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Coffee" value={this.state.name} name="name" onChange={this.handleChange} />
             </div>

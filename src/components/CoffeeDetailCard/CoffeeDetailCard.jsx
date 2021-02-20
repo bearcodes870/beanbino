@@ -1,23 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import './CoffeeDetailCard.css';
 
 function CoffeeDetailCard({coffee}) { 
   return (
-    <div className='panel panel-default'>
-      <div className="panel-heading">
-        <h3 className='panel-title'>{coffee.name}</h3>
-      </div>
-      <div className='panel-body'>
-        <dl>
-          <dt>Name</dt>
-          <dd>{coffee.name}</dd>
-          <dt>Region</dt>
-          <dd>{coffee.region}</dd>
-        </dl>
-      </div>
-      <div className='panel-footer'>
-        <Link to='/'>RETURN TO LIST</Link>
-      </div>
+    <div class="card-detail">
+        <h2 class="card-header">{coffee.name}'s Profile</h2>
+         <div class="card-body">
+            <h3 class="card-title">This coffee is from: {coffee.region}</h3>
+        </div>
     </div>
   );
 }
