@@ -57,10 +57,13 @@ render() {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
-                <Route exact path='/new-coffee' render={(props) =>
-                <NewCoffeePage 
-                   {...props} 
-                   />
+                <Route exact path='/new-coffee' render={(props) => (
+                    userService.getUser() ?
+                    <NewCoffeePage
+                   {...props}/>
+                   :
+                   <Redirect to='/login' />
+                )
                  }/>
                  <Route exact path='/details' render={(props) => (
                      userService.getUser() ?
