@@ -46,10 +46,10 @@ Start Here: [Heroku](https://beanbino.herokuapp.com/)
 
 # Next Steps:
 
-- Roastery implementation
-- Review implementation
+- Roastery model implementation
+- Review model implementation
 - Control CRUD according to user
 - Further define "coffees" model
 - Improve styling
 - Add additional details for each coffee entry
-
+- Google Maps API Implementation
