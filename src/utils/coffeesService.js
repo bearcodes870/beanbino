@@ -69,7 +69,7 @@ function deleteCoffee(id) {
           // Add this header - don't forget the space after Bearer
           'Authorization': 'Bearer ' + tokenService.getToken()
         },
-        body: JSON.stringify(id)
+        body: JSON.stringify({id})
       };
       // api/coffees/:id
       return fetch(`${BASE_URL}${id}`, options).then(res => res.json());

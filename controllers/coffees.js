@@ -39,6 +39,7 @@ async function update(req, res) {
   }
 
 async function deleteCoffee(req, res) {
+    console.log(req.params.id);
     const coffee = await Coffee.findByIdAndDelete(req.params.id)
     console.log(coffee);
     res.json(coffee);

@@ -40,7 +40,7 @@ class CoffeeDetailPage extends Component {
         </Row>
         <button
           className='btn btn-xs btn-danger margin-left-10 delete-coffee'
-          onClick={() => handleDeleteCoffee(this.state.coffee._id)}>
+          onClick={() => this.handleDeleteCoffee(this.state.coffee._id)}>
           DELETE
         </button>
         </Container>
