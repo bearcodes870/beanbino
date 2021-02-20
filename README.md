@@ -6,6 +6,8 @@ App Title: Contains a description of what the app does and optional background i
 
 ☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
 
+[Screenshot](public/1.png)
+
 # Technologies Used:
 
 ☐ Technologies Used: List of the technologies used.
