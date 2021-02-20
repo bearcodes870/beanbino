@@ -1,24 +1,24 @@
-# H1 Beanbino
+# Beanbino
 
 App Title: Contains a description of what the app does and optional background info.
 
-# H1 Screenshots:
+# Screenshots:
 
 ☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
 
-# H1 Technologies Used:
+# Technologies Used:
 
 ☐ Technologies Used: List of the technologies used.
 
-# H1 Getting Started:
+# Getting Started:
 
 ☐ Getting Started: That Includes:
 
-[Heroku]()
+[Heroku](https://beanbino.herokuapp.com/)
 
-[GitHub]()
+[GitHub](https://github.com/bearcodes870/beanbino)
 
-[Trello]()
+[Trello](https://trello.com/b/bhNmUsBe/sei-proj-4-beanbino)
 
 [Wireframe](https://lucid.app/lucidchart/54924940-3368-4a60-ac94-1a13710e66ed/edit?beaconFlowId=4C7AE22D9D61A6F4&page=0_0#?folder_id=home&browser=icon)
 
@@ -27,7 +27,7 @@ App Title: Contains a description of what the app does and optional background i
 
 
 
-# H1 Next Steps:
+# Next Steps:
 
 Planned future enhancements (icebox items).
 
