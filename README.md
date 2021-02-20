@@ -4,13 +4,21 @@ App Title: Contains a description of what the app does and optional background i
 
 # Screenshots:
 
-☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
-
-[Screenshot](public/1.png)
+[Screenshot 1](public/1.png)
+[Screenshot 2](public/2.png)
+[Screenshot 3](public/3.png)
 
 # Technologies Used:
 
-☐ Technologies Used: List of the technologies used.
+- MongoDB
+- Mongoose
+- Express.js
+- React.js
+- Node.js
+- Bootstrap
+- Bcrypt
+- JsonWebToken
+
 
 # Getting Started:
 
